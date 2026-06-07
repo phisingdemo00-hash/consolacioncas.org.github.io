@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colegio Consolación Castellón — Únete a nuestra familia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul: #1a3a5c;
+  --azul-med: #2a5f8f;
+  --azul-claro: #4a90c4;
+  --dorado: #c8a84b;
+  --dorado-claro: #e8c96b;
+  --crema: #f7f3ec;
+  --blanco: #ffffff;
+  --gris: #5a5a5a;
+  --gris-claro: #f0ede8;
+  --borde: #ddd8d0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--crema);color:var(--azul);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,58,92,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px}
+.nav-logo{font-family:'Playfair Display',serif;color:var(--dorado);font-size:1.1rem;font-weight:700;letter-spacing:.02em}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:.87rem;font-weight:400;letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover{color:var(--dorado)}
+.nav-cta{background:var(--dorado)!important;color:var(--azul)!important;padding:8px 20px;border-radius:4px;font-weight:500!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--dorado-claro)!important}
+
+/* HERO */
+#inicio{min-height:100vh;background:linear-gradient(155deg,var(--azul) 0%,#1e5080 55%,#245a8a 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 40px 100px;position:relative;overflow:hidden}
+.hero-img{position:absolute;inset:0;background:url('https://www.consolacioncas.org/contenido/2023/10/IMG_2233-1-scaled.jpg') center/cover;opacity:.18}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,var(--dorado) 0,var(--dorado) 1px,transparent 0,transparent 50%);background-size:28px 28px;opacity:.04}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(200,168,75,.18);border:1px solid var(--dorado);color:var(--dorado-claro);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;padding:6px 18px;border-radius:2px;margin-bottom:26px;animation:fadeUp .6s ease both}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);color:var(--blanco);font-weight:900;line-height:1.1;margin-bottom:22px;animation:fadeUp .7s .1s ease both}
+.hero-title span{color:var(--dorado)}
+.hero-sub{font-size:1.08rem;color:rgba(255,255,255,.72);max-width:540px;margin:0 auto 38px;line-height:1.75;font-weight:300;animation:fadeUp .7s .2s ease both}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .3s ease both}
+.btn-primary{background:var(--dorado);color:var(--azul);padding:13px 30px;border-radius:4px;font-weight:500;font-size:.93rem;text-decoration:none;transition:transform .2s,background .2s;letter-spacing:.02em}
+.btn-primary:hover{background:var(--dorado-claro);transform:translateY(-2px)}
+.btn-outline{border:1.5px solid rgba(255,255,255,.45);color:var(--blanco);padding:13px 30px;border-radius:4px;font-size:.93rem;text-decoration:none;transition:border-color .2s,background .2s}
+.btn-outline:hover{border-color:var(--dorado);background:rgba(200,168,75,.1)}
+.hero-stats{position:absolute;bottom:0;left:0;right:0;background:rgba(10,28,46,.65);backdrop-filter:blur(6px);display:flex;justify-content:center;gap:64px;padding:22px 40px;animation:fadeUp .7s .45s ease both;border-top:1px solid rgba(200,168,75,.2)}
+.stat{text-align:center}
+.stat-n{font-family:'Playfair Display',serif;font-size:2rem;color:var(--dorado);font-weight:700;line-height:1}
+.stat-l{font-size:.74rem;color:rgba(255,255,255,.55);letter-spacing:.07em;text-transform:uppercase;margin-top:4px}
+
+/* SECTIONS */
+section{padding:90px 40px}
+.container{max-width:1160px;margin:0 auto}
+.section-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dorado);font-weight:500;margin-bottom:10px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.7rem);color:var(--azul);font-weight:700;line-height:1.2;margin-bottom:16px}
+.section-desc{font-size:.98rem;color:var(--gris);max-width:560px;line-height:1.78;font-weight:300}
+
+/* TOUR VIRTUAL */
+#tour{background:var(--blanco)}
+.tour-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:48px}
+.tour-layout.solo-panel{grid-template-columns:1fr;margin-top:0}
+.map-wrap{position:relative;background:var(--gris-claro);border-radius:12px;overflow:hidden;border:1.5px solid var(--borde);aspect-ratio:4/3}
+.map-svg{width:100%;height:100%;display:block}
+.hotspot{position:absolute;width:34px;height:34px;background:var(--azul);border:2.5px solid var(--dorado);border-radius:50%;cursor:pointer;transform:translate(-50%,-50%);transition:transform .2s,background .2s;display:flex;align-items:center;justify-content:center;color:var(--dorado);font-size:.75rem;font-weight:700;z-index:5}
+.hotspot:hover,.hotspot.active{background:var(--dorado);color:var(--azul);transform:translate(-50%,-50%) scale(1.18)}
+.hotspot::after{content:'';position:absolute;width:40px;height:40px;border-radius:50%;border:2px solid var(--dorado);opacity:0;animation:pulse 2s infinite}
+@keyframes pulse{0%{opacity:.7;transform:scale(.9)}100%{opacity:0;transform:scale(1.9)}}
+.hs-tip{position:absolute;background:var(--azul);color:#fff;font-size:.7rem;padding:3px 9px;border-radius:3px;white-space:nowrap;pointer-events:none;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);opacity:0;transition:opacity .15s;font-family:'DM Sans',sans-serif}
+.hotspot:hover .hs-tip,.hotspot.active .hs-tip{opacity:1}
+/* Ocultar zona panels debajo del mapa — ya no se usan */
+.zone-default,.zone-panel,.tour-layout.solo-panel{display:none!important}
+
+/* ── MODAL PANTALLA COMPLETA ── */
+#instModal{
+  position:fixed;inset:0;z-index:999;
+  background:rgba(8,20,36,.96);
+  display:none;flex-direction:column;
+  animation:modalIn .28s ease;
+}
+#instModal.open{display:flex}
+@keyframes modalIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+
+/* Cabecera modal */
+.modal-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 28px 14px;
+  border-bottom:1px solid rgba(200,168,75,.2);
+  flex-shrink:0;
+}
+.modal-back{
+  display:flex;align-items:center;gap:9px;
+  background:rgba(200,168,75,.15);border:1.5px solid var(--dorado);
+  color:var(--dorado);font-size:.85rem;font-weight:600;
+  padding:9px 20px;border-radius:6px;cursor:pointer;
+  font-family:'DM Sans',sans-serif;letter-spacing:.03em;
+  transition:background .2s;
+}
+.modal-back:hover{background:var(--dorado);color:var(--azul)}
+.modal-back svg{width:16px;height:16px;fill:currentColor}
+.modal-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.45rem;color:#fff;font-weight:700;
+  text-align:center;flex:1;
+}
+.modal-counter{
+  font-size:.8rem;color:rgba(255,255,255,.45);
+  font-family:'DM Sans',sans-serif;min-width:70px;text-align:right;
+}
+
+/* Zona central: foto grande */
+.modal-stage{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;padding:0 70px;
+}
+.modal-img-wrap{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+}
+.modal-img-wrap img{
+  max-width:100%;max-height:100%;object-fit:contain;
+  border-radius:6px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  transition:opacity .22s,transform .22s;
+}
+.modal-img-wrap img.fade-out{opacity:0;transform:scale(.97)}
+
+/* Descripción bajo la foto */
+.modal-desc{
+  text-align:center;padding:10px 28px 6px;
+  font-size:.87rem;color:rgba(255,255,255,.6);
+  font-family:'DM Sans',sans-serif;flex-shrink:0;
+}
+.modal-desc strong{color:var(--dorado-claro);font-weight:500}
+
+/* Flechas laterales */
+.modal-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(200,168,75,.18);border:1.5px solid rgba(200,168,75,.4);
+  border-radius:50%;width:48px;height:48px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--dorado);font-size:1.3rem;font-weight:700;
+  transition:background .2s,border-color .2s;z-index:2;
+  font-family:sans-serif;
+}
+.modal-arrow:hover{background:var(--dorado);color:var(--azul);border-color:var(--dorado)}
+.modal-arrow.left{left:14px}
+.modal-arrow.right{right:14px}
+
+/* Miniaturas inferiores */
+.modal-thumbs{
+  display:flex;gap:10px;justify-content:center;align-items:center;
+  padding:14px 28px 20px;flex-shrink:0;
+  overflow-x:auto;
+}
+.modal-thumb{
+  width:72px;height:54px;border-radius:5px;overflow:hidden;
+  cursor:pointer;border:2.5px solid transparent;
+  flex-shrink:0;transition:border-color .2s,transform .2s;opacity:.55;
+}
+.modal-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.modal-thumb:hover{opacity:.85;transform:scale(1.05)}
+.modal-thumb.active{border-color:var(--dorado);opacity:1;transform:scale(1.08)}
+
+/* Texto de instalación en el panel inferior del mapa — ya no visible */
+.photo-grid,.photo-item,.photo-caption,.zone-head{display:none}
+
+/* EXTRAESCOLARES */
+#extraescolares{background:var(--crema)}
+.stage-tabs{display:flex;border-radius:6px;overflow:hidden;border:1.5px solid var(--borde);width:fit-content;margin:36px 0 28px}
+.stage-tab{padding:10px 26px;cursor:pointer;font-size:.87rem;font-weight:500;background:var(--blanco);color:var(--gris);border:none;border-right:1px solid var(--borde);font-family:'DM Sans',sans-serif;transition:background .2s,color .2s}
+.stage-tab:last-child{border-right:none}
+.stage-tab.active{background:var(--azul);color:var(--blanco)}
+.acts-grid{display:none;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.acts-grid.active{display:grid}
+.act-card{background:var(--blanco);border-radius:8px;padding:18px;border:1.5px solid #e8e3db;display:flex;flex-direction:column;gap:6px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.act-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(26,58,92,.09);border-color:var(--azul-claro)}
+.act-icon{font-size:1.5rem}
+.act-name{font-size:.9rem;font-weight:500;color:var(--azul)}
+.act-cat{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--dorado);font-weight:500}
+
+/* PROYECTOS */
+#proyectos{background:var(--azul)}
+#proyectos .section-title{color:var(--blanco)}
+#proyectos .section-desc{color:rgba(255,255,255,.62)}
+#proyectos .section-label{color:var(--dorado-claro)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.proj-card{border-radius:10px;overflow:hidden;border:1px solid rgba(200,168,75,.2);transition:transform .25s,border-color .25s;position:relative}
+.proj-card:hover{transform:translateY(-5px);border-color:var(--dorado)}
+.proj-img{width:100%;height:160px;object-fit:cover;display:block;filter:brightness(.75)}
+.proj-body{background:rgba(10,28,46,.85);padding:20px}
+.proj-emoji{font-size:1.4rem;margin-bottom:10px}
+.proj-nombre{font-family:'Playfair Display',serif;font-size:1rem;color:var(--dorado);font-weight:700;margin-bottom:6px}
+.proj-desc{font-size:.84rem;color:rgba(255,255,255,.72);line-height:1.6}
+.proj-tag{display:inline-block;margin-top:12px;background:rgba(200,168,75,.15);color:var(--dorado-claro);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:3px}
+
+/* CONTACTO */
+#contacto{background:var(--crema)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:48px}
+.contact-info h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--azul);margin-bottom:14px}
+.contact-info p{font-size:.9rem;color:var(--gris);line-height:1.78;margin-bottom:22px}
+.contact-dato{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.contact-dato-icon{width:36px;height:36px;background:var(--azul);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.contact-dato-text small{display:block;font-size:.72rem;color:#999;margin-bottom:2px;letter-spacing:.06em;text-transform:uppercase}
+.contact-dato-text a{color:var(--azul-med);text-decoration:none;font-size:.9rem}
+.contact-dato-text a:hover{text-decoration:underline}
+.social-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.social-btn{background:var(--azul);color:#fff;padding:8px 16px;border-radius:5px;font-size:.82rem;text-decoration:none;transition:background .2s}
+.social-btn:hover{background:var(--azul-med)}
+.form-card{background:var(--blanco);border-radius:12px;padding:34px;border:1.5px solid var(--borde);box-shadow:0 4px 28px rgba(26,58,92,.07)}
+.form-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--azul);margin-bottom:4px}
+.form-sub{font-size:.83rem;color:var(--gris);margin-bottom:22px}
+.form-sub a{color:var(--azul-med)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.fg label{font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--azul);font-weight:500}
+.fg input,.fg textarea,.fg select{border:1.5px solid var(--borde);border-radius:6px;padding:10px 13px;font-family:'DM Sans',sans-serif;font-size:.9rem;color:var(--azul);background:var(--blanco);transition:border-color .2s;outline:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--azul-med)}
+.fg textarea{resize:vertical;min-height:96px}
+.form-check{display:flex;gap:9px;align-items:flex-start;margin:10px 0 18px}
+.form-check input{margin-top:3px;flex-shrink:0;cursor:pointer}
+.form-check label{font-size:.8rem;color:var(--gris);line-height:1.5}
+.form-check label a{color:var(--azul-med)}
+.btn-submit{width:100%;background:var(--azul);color:#fff;border:none;border-radius:6px;padding:13px;font-family:'DM Sans',sans-serif;font-size:.93rem;font-weight:500;cursor:pointer;letter-spacing:.03em;transition:background .2s,transform .15s}
+.btn-submit:hover{background:var(--azul-med);transform:translateY(-1px)}
+.form-ok{display:none;text-align:center;padding:20px;color:#2d7a4f;font-weight:500;font-size:.95rem}
+
+/* FOOTER */
+footer{background:#0c2036;color:rgba(255,255,255,.5);padding:36px 40px;text-align:center;font-size:.8rem;line-height:1.9}
+footer a{color:var(--dorado);text-decoration:none}
+footer strong{color:rgba(255,255,255,.82)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* MAPA INTERACTIVO CON IMAGEN */
+.map-viewport{position:relative;width:100%;aspect-ratio:16/10;background:url('https://i.ibb.co/35gQC55W/Gemini-Generated-Image-7uskw87uskw87usk.png') center/cover no-repeat;border-radius:12px;overflow:hidden;border:1.5px solid var(--borde)}
+.map-sidebar{position:absolute;top:12px;left:12px;width:170px;background:rgba(255,255,255,.95);border-radius:10px;padding:12px;box-shadow:0 4px 14px rgba(0,0,0,.12);backdrop-filter:blur(6px);z-index:10}
+.map-sidebar-title{font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;color:#999;margin-bottom:8px;font-weight:700;font-family:'DM Sans',sans-serif}
+.map-sidebar-item{display:flex;align-items:center;padding:6px 8px;margin-bottom:3px;border-radius:6px;cursor:pointer;font-size:.78rem;color:#444;font-family:'DM Sans',sans-serif;transition:background .2s,color .2s;font-weight:400}
+.map-sidebar-item:hover,.map-sidebar-item.active{background:var(--azul);color:#fff}
+.map-sidebar-item span{margin-right:7px;font-size:.95rem}
+.map-pin{position:absolute;transform:translate(-50%,-50%);cursor:pointer;z-index:5;transition:transform .2s}
+.map-pin:hover{transform:translate(-50%,-50%) scale(1.1)}
+.map-pin-label{display:flex;align-items:center;background:rgba(255,255,255,.96);padding:5px 11px;border-radius:20px;box-shadow:0 3px 10px rgba(0,0,0,.18);font-size:.72rem;font-weight:600;color:var(--azul);white-space:nowrap;border:2px solid transparent;transition:border-color .2s,box-shadow .2s;font-family:'DM Sans',sans-serif}
+.map-pin:hover .map-pin-label,.map-pin.active .map-pin-label{border-color:var(--dorado);box-shadow:0 4px 14px rgba(200,168,75,.35)}
+.map-pin-dot{width:10px;height:10px;border-radius:50%;margin-right:6px;flex-shrink:0}
+.map-pin.azul .map-pin-dot{background:var(--azul-claro)}
+.map-pin.dorado .map-pin-dot{background:var(--dorado)}
+.map-pin.verde .map-pin-dot{background:#3a8a58}
+.map-pin.morado .map-pin-dot{background:#7c5caa}
+.map-info-panel{position:absolute;bottom:14px;left:14px;width:260px;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 4px 18px rgba(0,0,0,.15);display:none;z-index:20;animation:slideUp .25s ease;border-left:3px solid var(--dorado)}
+@keyframes slideUp{from{transform:translateY(12px);opacity:0}to{transform:translateY(0);opacity:1}}
+.map-info-panel h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--azul);margin-bottom:5px}
+.map-info-panel p{font-size:.8rem;color:var(--gris);line-height:1.5}
+.map-info-close{float:right;cursor:pointer;color:#bbb;font-size:1.1rem;line-height:1;margin-left:8px;font-weight:700;transition:color .15s}
+.map-info-close:hover{color:var(--azul)}
+.map-bottom-ctrls{position:absolute;bottom:14px;right:14px;display:flex;gap:6px;z-index:10}
+.map-ctrl-btn{background:rgba(255,255,255,.92);border:1.5px solid var(--borde);border-radius:6px;width:32px;height:32px;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--azul);font-weight:700;transition:background .2s,border-color .2s;backdrop-filter:blur(4px)}
+.map-ctrl-btn:hover{background:var(--dorado);border-color:var(--dorado);color:#fff}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Consolación Castellón</div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#tour">Tour virtual</a></li>
+    <li><a href="#extraescolares">Extraescolares</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-img"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Centro concertado desde 1871 · Castellón de la Plana</div>
+    <h1 class="hero-title">Tu hijo merece un colegio<br>que le <span>inspire</span></h1>
+    <p class="hero-sub">En la Consolación educamos con la mirada puesta en cada alumno. Desde Infantil hasta Bachillerato, en el corazón de Castellón.</p>
+    <div class="hero-btns">
+      <a href="#tour" class="btn-primary">Conoce el colegio →</a>
+      <a href="#contacto" class="btn-outline">Solicitar información</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-n">+1.200</div><div class="stat-l">Alumnos</div></div>
+    <div class="stat"><div class="stat-n">150+</div><div class="stat-l">Años de historia</div></div>
+    <div class="stat"><div class="stat-n">13.000 m²</div><div class="stat-l">De instalaciones</div></div>
+    <div class="stat"><div class="stat-n">+30</div><div class="stat-l">Extraescolares</div></div>
+  </div>
+</section>
+
+<!-- TOUR VIRTUAL -->
+<section id="tour">
+  <div class="container">
+    <p class="section-label reveal">Tour virtual</p>
+    <h2 class="section-title reveal">Descubre nuestras instalaciones</h2>
+    <p class="section-desc reveal">Haz clic en los puntos del plano para explorar cada espacio del colegio con fotos reales.</p>
+
+    <!-- MAPA INTERACTIVO POR IMAGEN -->
+    <div class="map-viewport reveal" id="mapViewport">
+
+      <!-- Barra lateral de instalaciones -->
+      <div class="map-sidebar">
+        <div class="map-sidebar-title">Instalaciones</div>
+        <div class="map-sidebar-item active" data-pin="edificio"><span>🏢</span>Edificio Principal</div>
+        <div class="map-sidebar-item" data-pin="polideportivo"><span>🏀</span>Polideportivo</div>
+        <div class="map-sidebar-item" data-pin="salon"><span>🎭</span>Salón de actos</div>
+        <div class="map-sidebar-item" data-pin="iglesia"><span>⛪</span>Iglesia</div>
+        <div class="map-sidebar-item" data-pin="patio"><span>☀️</span>Patio</div>
+      </div>
+
+      <!-- Pines flotantes -->
+      <div class="map-pin dorado active" id="pin-edificio" style="left:42%;top:40%"
+           data-titulo="🏫 Edificio Principal"
+           data-desc="4 plantas con aulas luminosas equipadas con pizarras digitales y tecnología iPad. Secretaría y oficinas principales del colegio.">
+        <div class="map-pin-label"><div class="map-pin-dot"></div>Edificio Principal</div>
+      </div>
+
+      <div class="map-pin verde" id="pin-polideportivo" style="left:90%;top:35%"
+           data-titulo="🏀 Polideportivo"
+           data-desc="Pista cubierta multiusos para fútbol sala, baloncesto y voleibol. 7 vestuarios con duchas y campos exteriores.">
+        <div class="map-pin-label"><div class="map-pin-dot"></div>Polideportivo</div>
+      </div>
+
+      <div class="map-pin morado" id="pin-salon" style="left:80%;top:20%"
+           data-titulo="🎭 Salón de Actos"
+           data-desc="672 butacas en platea y anfiteatro. Equipamiento audiovisual de última generación. Escenario para festivales y teatro.">
+        <div class="map-pin-label"><div class="map-pin-dot"></div>Salón de Actos</div>
+      </div>
+
+      <div class="map-pin dorado" id="pin-iglesia" style="left:68%;top:25%"
+           data-titulo="⛪ Iglesia"
+           data-desc="Capacidad para 500 personas. Graduaciones, festividades y eucaristías de familias todos los sábados a las 18:00 h.">
+        <div class="map-pin-label"><div class="map-pin-dot"></div>Iglesia</div>
+      </div>
+
+      <div class="map-pin verde" id="pin-patio" style="left:60%;top:58%"
+           data-titulo="☀️ Patio y Exteriores"
+           data-desc="Más de 10.000 m² con tablero de ajedrez humano, 4 canchas de baloncesto, campo de fútbol, parque infantil y huerto escolar.">
+        <div class="map-pin-label"><div class="map-pin-dot"></div>Patio · 10.000 m²</div>
+      </div>
+
+      <!-- Panel de información -->
+      <div class="map-info-panel" id="mapInfoPanel">
+        <span class="map-info-close" id="mapInfoClose">&times;</span>
+        <h4 id="mapInfoTitle">Instalación</h4>
+        <p id="mapInfoDesc">Selecciona un punto para ver los detalles.</p>
+      </div>
+
+      <!-- Controles inferiores -->
+      <div class="map-bottom-ctrls">
+        <button class="map-ctrl-btn" title="Ver fotos" onclick="document.getElementById('tour').scrollIntoView({behavior:'smooth'})">📷</button>
+        <button class="map-ctrl-btn" title="Cómo llegar" onclick="window.open('https://goo.gl/maps/749221kFcAR2','_blank')">📍</button>
+      </div>
+
+    </div><!-- /map-viewport -->
+
+    <!-- PANELES DE ZONA (bajo el mapa) -->
+    <div class="tour-layout solo-panel reveal" style="margin-top:32px">
+      <div id="zonePanels" style="min-height:200px">
+
+        <div class="zone-default" id="zoneDefault">
+          <div style="font-size:3rem;margin-bottom:14px">🗺️</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--azul);margin-bottom:8px">Selecciona una zona</h3>
+          <p style="font-size:.87rem;color:var(--gris)">Haz clic en cualquiera de los pines del mapa para ver fotos reales de ese espacio.</p>
+        </div>
+
+        <!-- 1. Edificio / Aulas -->
+        <div class="zone-panel" id="zone-edificio">
+          <div class="zone-head">
+            <h3>🏫 Aulas y edificio principal</h3>
+            <p>Clases espaciosas y luminosas equipadas con pizarras digitales, TVs de 60" y tecnología iPad. 4 plantas con aulas específicas por materia en Secundaria.</p>
+          </div>
+          <div class="photo-grid">
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2023/10/IMG_2233-1-scaled.jpg" alt="Pizarra digital Primaria" loading="lazy"><div class="photo-caption">Pizarra digital — Primaria</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRInfantil-043-1.jpg" alt="Clase de Infantil" loading="lazy"><div class="photo-caption">Clase de Infantil</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRExtra-59-1.jpg" alt="Aula Secundaria" loading="lazy"><div class="photo-caption">Aula de Secundaria</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRExtra-47.jpg" alt="Laboratorio Química" loading="lazy"><div class="photo-caption">Laboratorio de Química</div></div>
+          </div>
+        </div>
+
+        <!-- 2. Polideportivo -->
+        <div class="zone-panel" id="zone-polideportivo">
+          <div class="zone-head">
+            <h3>🏀 Polideportivo</h3>
+            <p>Pista cubierta para fútbol sala, baloncesto y voleibol. 7 vestuarios con duchas. Campos exteriores de baloncesto y fútbol en el patio.</p>
+          </div>
+          <div class="photo-grid">
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRPolideportivo-057-1.jpg" alt="Polideportivo" loading="lazy"><div class="photo-caption">Pista interior</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRPolideportivo-055.jpg" alt="Polideportivo" loading="lazy"><div class="photo-caption">Vista desde arriba</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRPolideportivo-048.jpg" alt="Polideportivo" loading="lazy"><div class="photo-caption">Materiales deportivos</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRPolideportivo-051.jpg" alt="Polideportivo" loading="lazy"><div class="photo-caption">Canastas de baloncesto</div></div>
+          </div>
+        </div>
+
+        <!-- 3. Salón de actos -->
+        <div class="zone-panel" id="zone-salon">
+          <div class="zone-head">
+            <h3>🎭 Salón de actos</h3>
+            <p>672 butacas repartidas en platea y anfiteatro. Equipamiento audiovisual de última generación tras la reforma de 2019. Escenario para festivales, teatro y eventos.</p>
+          </div>
+          <div class="photo-grid">
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2020/04/IMG_3941.jpg" alt="Salón de actos" loading="lazy"><div class="photo-caption">Vista general</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2020/04/IMG_3950.jpg" alt="Salón de actos" loading="lazy"><div class="photo-caption">Escenario y platea</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2020/04/IMG_3935.jpg" alt="Salón de actos" loading="lazy"><div class="photo-caption">Anfiteatro</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2020/04/IMG_3939.jpg" alt="Salón de actos" loading="lazy"><div class="photo-caption">Butacas</div></div>
+          </div>
+        </div>
+
+        <!-- 4. Iglesia -->
+        <div class="zone-panel" id="zone-iglesia">
+          <div class="zone-head">
+            <h3>⛪ Iglesia</h3>
+            <p>Capacidad para 500 personas. Espacio de celebración para graduaciones, festividades y eucaristías de familias todos los sábados a las 18:00h.</p>
+          </div>
+          <div class="photo-grid">
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRExtra-1.jpg" alt="Iglesia" loading="lazy"><div class="photo-caption">Interior de la iglesia</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRExtra-6.jpg" alt="Iglesia" loading="lazy"><div class="photo-caption">Altar</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRExtra-7.jpg" alt="Iglesia" loading="lazy"><div class="photo-caption">Nave central</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2023/10/IMG_20230213_083207-scaled.jpg" alt="Iglesia" loading="lazy"><div class="photo-caption">Celebración</div></div>
+          </div>
+        </div>
+
+        <!-- 5. Comedor -->
+        <div class="zone-panel" id="zone-comedor">
+          <div class="zone-head">
+            <h3>🍽️ Comedor escolar</h3>
+            <p>Tres espacios de comedor, uno exclusivo para Infantil. Cocina propia en el centro con menús elaborados diariamente y atención personalizada.</p>
+          </div>
+          <div class="photo-grid">
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRComedor-020-1.jpg" alt="Comedor" loading="lazy"><div class="photo-caption">Comedor general</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2023/10/364B7C26-05B9-4567-B630-8756E3FB3869_1_201_a.jpeg" alt="Comedor" loading="lazy"><div class="photo-caption">Comedor Infantil</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRCocina-001.jpg" alt="Cocina" loading="lazy"><div class="photo-caption">Cocina propia</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRComedor-118.jpg" alt="Comedor" loading="lazy"><div class="photo-caption">Servicio de comedor</div></div>
+          </div>
+        </div>
+
+        <!-- 6. Patio -->
+        <div class="zone-panel" id="zone-patio">
+          <div class="zone-head">
+            <h3>☀️ Patio y exteriores</h3>
+            <p>Más de 10.000 m² de patio con tablero de ajedrez humano, 4 campos de baloncesto, campo de fútbol, parque infantil y huerto escolar.</p>
+          </div>
+          <div class="photo-grid">
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/MRPatio-047-1.jpg" alt="Patio" loading="lazy"><div class="photo-caption">Patio principal</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2023/10/IMG_2223-scaled.jpg" alt="Fachada" loading="lazy"><div class="photo-caption">Fachada del colegio</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2023/10/C46048A1-6A6D-480F-9441-E851505E0763-scaled.jpg" alt="Exterior" loading="lazy"><div class="photo-caption">Zona exterior</div></div>
+            <div class="photo-item"><img src="https://www.consolacioncas.org/contenido/2023/10/IMG_9747-scaled.jpg" alt="Pista exterior" loading="lazy"><div class="photo-caption">Pistas exteriores</div></div>
+          </div>
+        </div>
+
+      </div><!-- /zonePanels -->
+    </div><!-- /tour-layout -->
+  </div>
+</section>
+
+
+<!-- EXTRAESCOLARES -->
+<section id="extraescolares">
+  <div class="container">
+    <p class="section-label reveal">Actividades</p>
+    <h2 class="section-title reveal">Más de 30 actividades extraescolares</h2>
+    <p class="section-desc reveal">Deporte, música, idiomas, teatro y mucho más. Una oferta completa para que cada alumno encuentre su pasión, gestionada por <a href="https://www.consolacioncastellon.extraescolares.org" target="_blank" style="color:var(--azul-med)">Grupo MT</a>.</p>
+
+    <div class="stage-tabs reveal">
+      <button class="stage-tab active" data-tab="infantil">Infantil</button>
+      <button class="stage-tab" data-tab="primaria">Primaria</button>
+      <button class="stage-tab" data-tab="secundaria">Secundaria</button>
+    </div>
+
+    <div class="acts-grid active" id="tab-infantil">
+      <div class="act-card"><div class="act-icon">🇬🇧</div><div class="act-name">Escuela de idiomas</div><div class="act-cat">Idiomas</div></div>
+      <div class="act-card"><div class="act-icon">🎵</div><div class="act-name">Pequemusicos</div><div class="act-cat">Música</div></div>
+      <div class="act-card"><div class="act-icon">🤸</div><div class="act-name">Gimnasia rítmica</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">🥋</div><div class="act-name">Judo</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">⚽</div><div class="act-name">Fútbol</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">🛼</div><div class="act-name">Patinaje</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">🏃</div><div class="act-name">Multideporte</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">💃</div><div class="act-name">Bailes regionales</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">💃</div><div class="act-name">Flamenco</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">📖</div><div class="act-name">Storytelling</div><div class="act-cat">Escuela Creativa</div></div>
+      <div class="act-card"><div class="act-icon">🌱</div><div class="act-name">Estimulación temprana</div><div class="act-cat">Habilidades</div></div>
+    </div>
+    <div class="acts-grid" id="tab-primaria">
+      <div class="act-card"><div class="act-icon">🇬🇧</div><div class="act-name">Play & Learn</div><div class="act-cat">Idiomas</div></div>
+      <div class="act-card"><div class="act-icon">🎓</div><div class="act-name">Ready for Cambridge</div><div class="act-cat">Idiomas</div></div>
+      <div class="act-card"><div class="act-icon">🇫🇷</div><div class="act-name">Francés</div><div class="act-cat">Idiomas</div></div>
+      <div class="act-card"><div class="act-icon">🎭</div><div class="act-name">Teatro On Stage</div><div class="act-cat">Escuela Creativa</div></div>
+      <div class="act-card"><div class="act-icon">🎵</div><div class="act-name">Iniciación musical</div><div class="act-cat">Música · 1º y 2º</div></div>
+      <div class="act-card"><div class="act-icon">🎼</div><div class="act-name">Elemental musical</div><div class="act-cat">Música · 3º en adelante</div></div>
+      <div class="act-card"><div class="act-icon">🎤</div><div class="act-name">Voice Talent</div><div class="act-cat">Música · 3º en adelante</div></div>
+      <div class="act-card"><div class="act-icon">🎸</div><div class="act-name">Combos (banda)</div><div class="act-cat">Música</div></div>
+      <div class="act-card"><div class="act-icon">🏀</div><div class="act-name">Baloncesto</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">⚽</div><div class="act-name">Fútbol</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">🥋</div><div class="act-name">Judo</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">🛼</div><div class="act-name">Patinaje</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">🤸</div><div class="act-name">Gimnasia rítmica</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">💃</div><div class="act-name">Flamenco</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">💃</div><div class="act-name">Bailes regionales</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">📚</div><div class="act-name">Animación a la lectura</div><div class="act-cat">Habilidades</div></div>
+    </div>
+    <div class="acts-grid" id="tab-secundaria">
+      <div class="act-card"><div class="act-icon">🎓</div><div class="act-name">Ready for Cambridge</div><div class="act-cat">Idiomas</div></div>
+      <div class="act-card"><div class="act-icon">🇫🇷</div><div class="act-name">Francés</div><div class="act-cat">Idiomas</div></div>
+      <div class="act-card"><div class="act-icon">🎭</div><div class="act-name">Teatro</div><div class="act-cat">Escuela Creativa</div></div>
+      <div class="act-card"><div class="act-icon">🎸</div><div class="act-name">Combos (banda)</div><div class="act-cat">Música</div></div>
+      <div class="act-card"><div class="act-icon">🎼</div><div class="act-name">Elemental musical</div><div class="act-cat">Música</div></div>
+      <div class="act-card"><div class="act-icon">⚽</div><div class="act-name">Fútbol</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">🏀</div><div class="act-name">Baloncesto</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">♟️</div><div class="act-name">Jaque Mate (ajedrez)</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">💃</div><div class="act-name">Flamenco</div><div class="act-cat">Deporte</div></div>
+      <div class="act-card"><div class="act-icon">📖</div><div class="act-name">Sala de estudio</div><div class="act-cat">Habilidades</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="container">
+    <p class="section-label reveal">Lo que nos hace únicos</p>
+    <h2 class="section-title reveal">Proyectos que marcan la diferencia</h2>
+    <p class="section-desc reveal">Nuestros alumnos aprenden haciendo. Estos son algunos de los proyectos más especiales del colegio.</p>
+
+    <div class="proj-grid reveal">
+      <div class="proj-card">
+        <img class="proj-img" src="https://www.elperiodic.com/archivos/imagenes/noticias/2026/05/04/taller.jpg" alt="Erasmus">
+        <div class="proj-body">
+          <div class="proj-emoji">🇪🇺</div>
+          <div class="proj-nombre">Erasmus+</div>
+          <div class="proj-desc">Intercambios y proyectos con colegios europeos. Escuela Embajadora y miembro del programa SEPIE. El mundo como aula.</div>
+          <span class="proj-tag">Escuela Embajadora</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <img class="proj-img" src="https://www.consolacioncas.org/contenido/MRPrimaria-061-1.jpg" alt="iPad Innova">
+        <div class="proj-body">
+          <div class="proj-emoji">📱</div>
+          <div class="proj-nombre">Consolación Innova</div>
+          <div class="proj-desc">Centro iPad. Tecnología como herramienta de aprendizaje activo. 44 profesores con acreditación B1/B2 en competencia digital.</div>
+          <span class="proj-tag">Innovación educativa</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <img class="proj-img" src="https://www.canetloroig.es/sites/L01120363/files/2025-06/BRECHA%20DIGITAL%281%29.jpg" alt="Tiritas Digitales">
+        <div class="proj-body">
+          <div class="proj-emoji">👴</div>
+          <div class="proj-nombre">Tiritas Digitales</div>
+          <div class="proj-desc">Alumnos de 4º ESO enseñan tecnología a personas mayores en pueblos de la comarca. Aprendizaje-servicio real fuera del aula.</div>
+          <span class="proj-tag">Aprendizaje-servicio</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <img class="proj-img" src="https://www.consolacioncas.org/contenido/2020/04/IMG_3941.jpg" alt="Talent show">
+        <div class="proj-body">
+          <div class="proj-emoji">🎤</div>
+          <div class="proj-nombre">Tú Sí que Molas</div>
+          <div class="proj-desc">Nuestro talent show anual en el Salón de Actos. Música, baile, magia, humor… Los alumnos suben al escenario y el talento brilla.</div>
+          <span class="proj-tag">Creatividad</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <img class="proj-img" src="https://pbs.twimg.com/media/G054avdWQAAARGv?format=jpg&name=900x900" alt="Libera playas">
+        <div class="proj-body">
+          <div class="proj-emoji">🌊</div>
+          <div class="proj-nombre">Proyecto Libera</div>
+          <div class="proj-desc">Limpieza de playas de Castellón con familias y alumnos. Unidos contra la basuraleza, comprometidos con nuestro entorno.</div>
+          <span class="proj-tag">Medioambiente</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <img class="proj-img" src="https://consolacionburriana.com/images/centro/IMG_6335.jpeg" alt="Delwende">
+        <div class="proj-body">
+          <div class="proj-emoji">🌍</div>
+          <div class="proj-nombre">Delwende</div>
+          <div class="proj-desc">Nuestra ONGD. En la última fiesta de familias recaudamos 1.727 € para proyectos en Burkina Faso. Educamos en solidaridad.</div>
+          <span class="proj-tag">Solidaridad</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="container">
+    <p class="section-label reveal">¿Quieres saber más?</p>
+    <h2 class="section-title reveal">Contacta con nosotros</h2>
+
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <h3>Información de admisión</h3>
+        <p>Si necesitas más información sobre el proceso de admisión puedes leer esta <a href="https://www.consolacioncas.org/admisiones26-27" style="color:var(--azul-med)">sección de la web</a> o contactarnos en <a href="mailto:admisiones@consolacioncas.org" style="color:var(--azul-med)">admisiones@consolacioncas.org</a></p>
+
+        <div class="contact-dato">
+          <div class="contact-dato-icon">📍</div>
+          <div class="contact-dato-text">
+            <small>Dirección</small>
+            <a href="https://goo.gl/maps/749221kFcAR2" target="_blank">Av. Virgen de Lidón 49, 12004 Castellón</a>
+          </div>
+        </div>
+        <div class="contact-dato">
+          <div class="contact-dato-icon">📞</div>
+          <div class="contact-dato-text">
+            <small>Teléfono</small>
+            <a href="tel:964220700">964 220 700</a>
+          </div>
+        </div>
+        <div class="contact-dato">
+          <div class="contact-dato-icon">📱</div>
+          <div class="contact-dato-text">
+            <small>Móvil</small>
+            <a href="tel:638092396">638 092 396</a>
+          </div>
+        </div>
+        <div class="contact-dato">
+          <div class="contact-dato-icon">✉️</div>
+          <div class="contact-dato-text">
+            <small>Email</small>
+            <a href="mailto:contacta@consolacioncas.org">contacta@consolacioncas.org</a>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <a href="https://instagram.com/consolacioncas" target="_blank" class="social-btn">Instagram</a>
+          <a href="https://twitter.com/consolacioncas" target="_blank" class="social-btn">Twitter / X</a>
+          <a href="https://facebook.com/consolacioncas" target="_blank" class="social-btn">Facebook</a>
+          <a href="https://www.youtube.com/@ConsolacionCastellonyt" target="_blank" class="social-btn">YouTube</a>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3>Formulario de contacto</h3>
+        <p class="form-sub">Si necesitas más información sobre el proceso de admisión puedes leer esta <a href="https://www.consolacioncas.org/admisiones26-27" target="_blank">sección de la web</a> o contactarnos en <a href="mailto:admisiones@consolacioncas.org">admisiones@consolacioncas.org</a></p>
+        <div id="formOk" class="form-ok">✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.</div>
+        <form id="contactForm" onsubmit="enviarForm(event)">
+          <div class="form-row">
+            <div class="fg">
+              <label>Nombre y apellidos *</label>
+              <input type="text" placeholder="María García López" required>
+            </div>
+            <div class="fg">
+              <label>Correo electrónico *</label>
+              <input type="email" placeholder="maria@ejemplo.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="fg">
+              <label>Teléfono (opcional)</label>
+              <input type="tel" placeholder="600 000 000">
+            </div>
+            <div class="fg">
+              <label>Asunto *</label>
+              <select required>
+                <option value="">Selecciona un asunto</option>
+                <option>Información general</option>
+                <option>Proceso de admisión</option>
+                <option>Actividades extraescolares</option>
+                <option>Visita al centro</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="fg">
+            <label>Mensaje *</label>
+            <textarea placeholder="Escribe aquí tu consulta…" required></textarea>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="priv" required>
+            <label for="priv">He leído y acepto <a href="https://www.consolacioncas.org/aviso-legal" target="_blank">la política de privacidad y uso de cookies</a></label>
+          </div>
+          <button type="submit" class="btn-submit">Enviar mensaje →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>Colegio Ntra. Sra. de la Consolación · Castellón de la Plana</strong><br>
+  Av. Virgen de Lidón 49 · 12004 Castellón · Tel. 964 220 700<br>
+  <a href="https://www.consolacioncas.org" target="_blank">consolacioncas.org</a> ·
+  <a href="https://www.consolacioncas.org/aviso-legal" target="_blank">Aviso legal</a> ·
+  <a href="https://www.consolacioncas.org/aviso-legal" target="_blank">Política de privacidad</a><br><br>
+  <small style="opacity:.45">Página de promoción creada por alumnos de 4º ESO · Proyecto cooperativo — Tema 5: Marketing Digital</small>
+</footer>
+
+<!-- ── MODAL PANTALLA COMPLETA ── -->
+<div id="instModal" role="dialog" aria-modal="true">
+
+  <div class="modal-header">
+    <button class="modal-back" id="modalBack">
+      <svg viewBox="0 0 20 20"><path d="M13.5 3L7 10l6.5 7"/></svg>
+      Volver al mapa
+    </button>
+    <div class="modal-title" id="modalTitle">Instalación</div>
+    <div class="modal-counter" id="modalCounter">1 / 4</div>
+  </div>
+
+  <div class="modal-stage">
+    <button class="modal-arrow left" id="modalPrev">&#8249;</button>
+    <div class="modal-img-wrap">
+      <img id="modalImg" src="" alt="">
+    </div>
+    <button class="modal-arrow right" id="modalNext">&#8250;</button>
+  </div>
+
+  <div class="modal-desc" id="modalDesc"></div>
+
+  <div class="modal-thumbs" id="modalThumbs"></div>
+
+</div>
+
+<script>
+// ── DATOS DE INSTALACIONES ──
+const ZONAS = {
+  edificio: {
+    titulo: '🏫 Aulas y Edificio Principal',
+    desc: '4 plantas con aulas luminosas equipadas con pizarras digitales, TVs de 60" y tecnología iPad. Secretaría y oficinas principales del colegio.',
+    fotos: [
+      { src:'https://www.consolacioncas.org/contenido/2023/10/IMG_2233-1-scaled.jpg',    cap:'Edificio Principal' },
+      { src:'https://www.consolacioncas.org/contenido/MRExtra-61-1-1500x1000.jpg',    cap:'Puerta Principal' },
+      { src:'https://www.consolacioncas.org/contenido/MRExtra-13-1500x1000.jpg',    cap:'Recepción' },
+      { src:'https://www.consolacioncas.org/contenido/MRInfantil-037.jpg',    cap:'Pasillo Infantil' },
+      { src:'https://www.consolacioncas.org/contenido/MRInfantil-043-1.jpg',    cap:'Clase de Infantil' },
+      { src:'https://www.consolacioncas.org/contenido/MRExtra-29-1500x1000.jpg',    cap:'Aula Primaria' },
+      { src:'https://www.consolacioncas.org/contenido/MRExtra-59-1.jpg',         cap:'Aula de Secundaria' },
+      { src:'https://www.consolacioncas.org/contenido/MRSecundaria-073-1500x1000.jpg',         cap:'iPad en Clase de Historia' },
+      { src:'https://www.consolacioncas.org/contenido/MRExtra-47.jpg',           cap:'Laboratorio de Química' },
+    ]
+  },
+  polideportivo: {
+    titulo: '🏀 Polideportivo',
+    desc: 'Pista cubierta multiusos para fútbol sala, baloncesto y voleibol. 7 vestuarios con duchas y campos exteriores.',
+    fotos: [
+      { src:'https://www.consolacioncas.org/contenido/MRPolideportivo-057-1.jpg', cap:'Pista interior' },
+      { src:'https://www.consolacioncas.org/contenido/MRPolideportivo-055.jpg',   cap:'Vista desde arriba' },
+      { src:'https://www.consolacioncas.org/contenido/MRPolideportivo-048.jpg',   cap:'Vestuarios' },
+      { src:'https://www.consolacioncas.org/contenido/MRPolideportivo-051.jpg',   cap:'Lavabos' },
+      { src:'https://www.consolacioncas.org/contenido/2023/10/IMG_9747-scaled.jpg',   cap:'Rocodromo' },
+    ]
+  },
+  salon: {
+    titulo: '🎭 Salón de Actos',
+    desc: '672 butacas en platea y anfiteatro. Equipamiento audiovisual de última generación. Escenario para festivales, teatro y eventos.',
+    fotos: [
+      { src:'https://www.consolacioncas.org/contenido/2020/04/IMG_3941.jpg', cap:'Vista general' },
+      { src:'https://www.consolacioncas.org/contenido/2020/04/IMG_3950.jpg', cap:'Escenario y platea' },
+      { src:'https://www.consolacioncas.org/contenido/2020/04/IMG_3935.jpg', cap:'Anfiteatro' },
+      { src:'https://www.consolacioncas.org/contenido/2020/04/IMG_3939.jpg', cap:'Butacas' },
+    ]
+  },
+  iglesia: {
+    titulo: '⛪ Iglesia',
+    desc: 'Capacidad para 500 personas. Graduaciones, festividades y eucaristías de familias todos los sábados a las 18:00 h.',
+    fotos: [
+      { src:'https://www.consolacioncas.org/contenido/MRExtra-1.jpg', cap:'Interior de la iglesia' },
+      { src:'https://www.consolacioncas.org/contenido/MRExtra-4.jpg', cap:'Altar' },
+      { src:'https://www.consolacioncas.org/contenido/MRExtra-7.jpg', cap:'Maria Teresa Gonzalez Justo' },
+      { src:'https://www.consolacioncas.org/contenido/2023/10/IMG_20230213_083207-scaled.jpg', cap:'Oratorio' },
+    ]
+  },
+  comedor: {
+    titulo: '🍽️ Comedor Escolar',
+    desc: 'Tres espacios de comedor, uno exclusivo para Infantil. Cocina propia con menús elaborados diariamente y atención personalizada.',
+    fotos: [
+      { src:'https://www.consolacioncas.org/contenido/MRComedor-020-1.jpg', cap:'Comedor general' },
+      { src:'https://www.consolacioncas.org/contenido/2023/10/364B7C26-05B9-4567-B630-8756E3FB3869_1_201_a.jpeg', cap:'Comedor Infantil' },
+      { src:'https://www.consolacioncas.org/contenido/MRCocina-001.jpg', cap:'Cocina propia' },
+      { src:'https://www.consolacioncas.org/contenido/MRComedor-118.jpg', cap:'Servicio de comedor' },
+    ]
+  },
+  patio: {
+    titulo: '☀️ Patio y Exteriores',
+    desc: 'Más de 10.000 m² con tablero de ajedrez humano, 4 canchas de baloncesto, campo de fútbol, parque infantil y huerto escolar.',
+    fotos: [
+      { src:'https://www.consolacioncas.org/contenido/MRPatio-047-1.jpg', cap:'Patio principal' },
+      { src:'https://www.consolacioncas.org/contenido/MRExtra-28-1500x1000.jpg', cap:'Campo de Fútbol' },
+      { src:'https://www.consolacioncas.org/contenido/2023/10/WhatsApp-Image-2023-07-06-at-11.33.23-1500x1125.jpeg', cap:'Huerto urbano' },
+    ]
+  }
+};
+
+// ── MODAL ──
+const modal    = document.getElementById('instModal');
+const modalImg = document.getElementById('modalImg');
+const modalTitle   = document.getElementById('modalTitle');
+const modalDesc    = document.getElementById('modalDesc');
+const modalCounter = document.getElementById('modalCounter');
+const modalThumbs  = document.getElementById('modalThumbs');
+
+let currentFotos = [];
+let currentIdx   = 0;
+
+function openModal(zonaId) {
+  const zona = ZONAS[zonaId];
+  if (!zona) return;
+  currentFotos = zona.fotos;
+  currentIdx   = 0;
+
+  modalTitle.textContent = zona.titulo;
+  modalDesc.innerHTML = zona.desc;
+
+  // Miniaturas
+  modalThumbs.innerHTML = '';
+  zona.fotos.forEach((f, i) => {
+    const t = document.createElement('div');
+    t.className = 'modal-thumb' + (i === 0 ? ' active' : '');
+    t.innerHTML = `<img src="${f.src}" alt="${f.cap}" loading="lazy">`;
+    t.addEventListener('click', () => goTo(i));
+    modalThumbs.appendChild(t);
+  });
+
+  showPhoto(0, false);
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function goTo(idx) {
+  if (idx < 0) idx = currentFotos.length - 1;
+  if (idx >= currentFotos.length) idx = 0;
+  showPhoto(idx, true);
+}
+
+function showPhoto(idx, animate) {
+  currentIdx = idx;
+  const foto = currentFotos[idx];
+
+  if (animate) {
+    modalImg.classList.add('fade-out');
+    setTimeout(() => {
+      modalImg.src = foto.src;
+      modalImg.alt = foto.cap;
+      modalImg.classList.remove('fade-out');
+    }, 180);
+  } else {
+    modalImg.src = foto.src;
+    modalImg.alt = foto.cap;
+  }
+
+  modalDesc.innerHTML = `<strong>${foto.cap}</strong> &nbsp;·&nbsp; ${currentIdx + 1} de ${currentFotos.length} fotos`;
+  modalCounter.textContent = `${idx + 1} / ${currentFotos.length}`;
+
+  modalThumbs.querySelectorAll('.modal-thumb').forEach((t, i) => {
+    t.classList.toggle('active', i === idx);
+  });
+}
+
+document.getElementById('modalBack').addEventListener('click', closeModal);
+document.getElementById('modalPrev').addEventListener('click', () => goTo(currentIdx - 1));
+document.getElementById('modalNext').addEventListener('click', () => goTo(currentIdx + 1));
+document.addEventListener('keydown', e => {
+  if (!modal.classList.contains('open')) return;
+  if (e.key === 'ArrowRight') goTo(currentIdx + 1);
+  if (e.key === 'ArrowLeft')  goTo(currentIdx - 1);
+  if (e.key === 'Escape')     closeModal();
+});
+
+// ── MAPA: pines y barra lateral ──
+(function() {
+  const pins = document.querySelectorAll('.map-pin');
+  const sidebarItems = document.querySelectorAll('.map-sidebar-item');
+  const infoPanel = document.getElementById('mapInfoPanel');
+  const infoTitle = document.getElementById('mapInfoTitle');
+  const infoDesc  = document.getElementById('mapInfoDesc');
+  document.getElementById('mapInfoClose').addEventListener('click', () => {
+    infoPanel.style.display = 'none';
+  });
+
+  function activatePin(pinId) {
+    pins.forEach(p => p.classList.remove('active'));
+    sidebarItems.forEach(s => s.classList.remove('active'));
+
+    const pin = document.getElementById('pin-' + pinId);
+    if (!pin) return;
+    pin.classList.add('active');
+
+    const sItem = document.querySelector('.map-sidebar-item[data-pin="' + pinId + '"]');
+    if (sItem) sItem.classList.add('active');
+
+    // Info panel pequeño en el mapa
+    infoTitle.textContent = pin.dataset.titulo || '';
+    infoDesc.textContent  = pin.dataset.desc   || '';
+    infoPanel.style.display = 'block';
+
+    // Abrir modal a pantalla completa
+    openModal(pinId);
+  }
+
+  pins.forEach(pin => {
+    pin.addEventListener('click', () => activatePin(pin.id.replace('pin-', '')));
+  });
+  sidebarItems.forEach(item => {
+    item.addEventListener('click', () => activatePin(item.dataset.pin));
+  });
+})();
+
+
+
+// Tabs extraescolares
+document.querySelectorAll('.stage-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.stage-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.acts-grid').forEach(g => g.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// Formulario
+function enviarForm(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formOk').style.display = 'block';
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
